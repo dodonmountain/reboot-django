@@ -1,0 +1,12 @@
+{% extends 'jobs/base.html' %}
+{% block body %}
+<div class="jumbotron primary">
+  <h1>당신은 전생에 무엇으로 먹고 살았을까?</h1>
+</div>
+<form action="/jobs/result" method="post">
+  {% csrf_token %}
+  <label for="name">NAME HERE >></label>
+  <input style="width:18rem; height: 9rem; font-size:30px; text-align: center" type="text" name="name" id="name">
+  <input class = "btn btn-primary btn-lg" type="submit" value="알아보기">
+</form>
+{% endblock %}
