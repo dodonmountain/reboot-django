@@ -23,7 +23,8 @@ def new(request):
 def create(request):
     title = request.POST.get('title')
     content = request.POST.get('content')
-    articles = Article(title=title, content=content)
+    image = request.FILES.get('image')
+    articles = Article(title=title, content=content, image=image)
     articles.save()
     return redirect('/articles/')
 

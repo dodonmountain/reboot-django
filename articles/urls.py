@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from . import views
 
@@ -11,3 +13,5 @@ urlpatterns = [
     path('<int:pk>/edit',views.edit),
     path('<int:pk>/update',views.update),
 ]
+
+urlpatterns += statice(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)s
